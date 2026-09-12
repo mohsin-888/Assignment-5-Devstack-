@@ -4,26 +4,26 @@ import NewStack from "./NewStack";
 import { toast } from "react-toastify";
 
 interface Technology {
-  id: string;
-  name: string;
-  category: string;
-  description: string;
-  icon: string;
-  rating: number;
-  difficulty: string;
-  badge: string;
+ id: string;
+ name: string;
+ category: string;
+ description: string;
+ icon: string;
+ rating: number;
+ difficulty: string;
+   badge: string;
 }
 
-const Technologies = () => {
+const Technologies = ()=>{
   const [technologies, setTechnologies] = useState<Technology[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedTech, setSelectedTech] = useState<Technology[]>([]);
 
-  useEffect(() => {
+  useEffect(()=>{
     fetch("/technologies.json")
       .then((res) => res.json())
       .then((data) => {
-        setTechnologies(data);
+     setTechnologies(data);
       })
       .finally(() => {
         setLoading(false);
@@ -45,7 +45,7 @@ const Technologies = () => {
 
   const handleRemove = (id: string) => {
     const remaining = selectedTech.filter(
-      (item) => item.id !== id
+  (item) => item.id !== id
     );
 
     setSelectedTech(remaining);
@@ -54,10 +54,14 @@ const Technologies = () => {
   const handleRemoveAll = () => {
     setSelectedTech([]);
   };
-
-  if (loading) {
-    return <p className="text-center">Loading...</p>;
-  }
+if (loading) {
+  return (
+    <div className="flex min-h-60 items-center justify-center">
+      <div className="h-10 w-10 animate-spin rounded-full border-4 border-gray-200 border-t-pink-500"></div>
+    </div>
+  );
+}
+  
 
   return (
     <section
@@ -69,26 +73,29 @@ const Technologies = () => {
         <span className="text-pink-500">Technologies</span>
       </h2>
 
+     
+     
+     
+     
       <p className="mt-2 text-gray-500">
         Pick one technology per category to build your ideal stack.
       </p>
 
     <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_300px]">
-
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+   <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {technologies.map((tech) => (
-            <TechnologyCard
-              key={tech.id}
-              technology={tech}
-              onAdd={handleAdd}
+        <TechnologyCard
+         key={tech.id}
+        technology={tech}
+      onAdd={handleAdd}
             />
           ))}
         </div>
 
-        <NewStack
-          selectedTech={selectedTech}
-          onRemove={handleRemove}
-          onRemoveAll={handleRemoveAll}
+      <NewStack
+     selectedTech={selectedTech}
+      onRemove={handleRemove}
+      onRemoveAll={handleRemoveAll}
         />
 
       </div>
