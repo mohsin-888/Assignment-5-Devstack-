@@ -32,7 +32,7 @@ const NewStack = ({
 
 
       {selectedTech.length === 0 ?(
-        <div className="mt-5 rounded-lg border border-dashed border-gray-300 p-8 text-center text-gray-400">
+        <div className="mt-5 rounded-lg border border-dashed border-pink-200 p-8 text-center text-gray-400">
           Your stack is empty.
         </div>
       ) : (
