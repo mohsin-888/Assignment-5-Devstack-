@@ -1,27 +1,26 @@
 interface Technology {
-  id: string;
-  name: string;
-  category: string;
-  description: string;
-  icon: string;
-  rating: number;
-  difficulty: string;
-  badge: string;
+ id: string;
+ name: string;
+ category: string;
+description: string;
+ icon: string;
+rating: number;
+ difficulty: string;
+ badge: string;
 }
 
 interface TechnologyCardProps {
-  technology: Technology;
-  onAdd: (technology: Technology) => void;
-  isAdded: boolean;
+ technology: Technology;
+ onAdd: (technology: Technology) => void;
+isAdded: boolean;
 }
-
 const TechnologyCard = ({
   technology,
   onAdd,
   isAdded
 }: TechnologyCardProps) => {
   return (
-    <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+    <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md">
 
       <div className="flex items-center justify-between">
         <img
