@@ -88,9 +88,12 @@ if (loading) {
          key={tech.id}
         technology={tech}
       onAdd={handleAdd}
-            />
-          ))}
-        </div>
+      isAdded={selectedTech.some(
+    (item) => item.id === tech.id
+          )}
+        />
+      ))}
+    </div>
 
       <NewStack
      selectedTech={selectedTech}
