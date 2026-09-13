@@ -1,32 +1,37 @@
-# React + TypeScript + Vite
+Name of your project;DevStack
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A little description;DevStack is a responsive React application where users can explore different development technologies and user also thr rating.
+Technology that you use;
+- React
+- TypeScript
+- Tailwind CSS
+- Vite
+- React Toastify
+3 features about your project;
+1. Users can explore multiple development technologies.
+2. Users can add technologies to their own stack and remove them.
+3. Duplicate technologies cannot be added to the stack.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Anwer of Question
 
-## React Compiler
+1. What is JSX?
+JSX is a syntax used in React that allows us to write HTML-like code inside JavaScript or TypeScript.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. What is the difference between State and Props?
+Props are used to pass data from one component to another. State is used to store and update data inside a component.
 
-## Expanding the Oxlint configuration
+3. What is the useState hook?
+useState is a React hook used to create and update state in a functional component.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+4. What is the useEffect hook?
+useEffect is used to perform side effects such as fetching data when a component loads.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+5. How does React handle events?
+React handles events using event handlers such as onClick, onChange, and onSubmit.
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+6. What is conditional rendering?
+Conditional rendering means showing different UI based on a condition.
+
+7.How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+A parent component passes data to a child using props. A child sends data back to the parent by calling a function passed from the parent as a prop.
